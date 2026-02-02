@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="container">
+    <!-- presentacion -->
+    <h1>Bienvenido al juego del gato</h1>
+    <div id="cats">
+      <img src="img/cat-removebg-preview.png" alt="gato" />
+      <img src="img/2do gato.png" alt="gato2" />
+    </div>
+
+
+    <hr />
+
+    <!-- creacion del gato -->
+    <div id="buildCat">
+      <h2>Cree a su gato</h2>
+      <div id="form">
+        <input type="text" placeholder="nombre" name="name" id="catName" />
+        <input type="text" placeholder="color" name="color" id="catColor" />
+      </div>
+      <button id="createButton">Crear</button>
+    </div>
+
+    <hr />
+
+    <!-- seccion de juego -->
+    <div id="gameSection"></div>
+  </div>
+
+  <!--<div>
+    <button id="missionButton">iniciar mision</button>
+</div>-->
+
+  <script src="Gato.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

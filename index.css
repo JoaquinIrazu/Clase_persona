@@ -1,0 +1,100 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #6495ED;
+}
+
+hr{
+    width: 800%;
+    border: 1px solid black;
+}
+
+#container{
+    background-color: #6495ED;
+    width: 100%;
+    height: 950px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    
+}
+
+#buildCat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    background-color: #3F6ED6  ;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+#form{
+     display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+#form input {
+  padding: 10px;
+  width: 30%;
+  border-radius: 10px;
+  border: 2px solid black;
+  font-size: 15px;
+}
+
+#missionButton {
+  margin-top: 20px;
+  padding: 10x;
+  font-size: 18px;
+  border: solid;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+h1, h2 {
+    color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+img{
+  
+     width: 200px;
+  height: 200px;
+  background-color: #6a8fe8;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px darkblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+button {
+     padding: 10px;
+  font-size: 15px;
+  border: ridge;
+  border-radius: 10px;
+  background-color: black ;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+}
+button:hover {
+  background-color: gray;
+  transform: scale(1.20);
+}
+
+#cats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
