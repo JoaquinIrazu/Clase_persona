@@ -11,17 +11,47 @@ class Pokemon {
   }
 };
 
-attack(){ //donde me falta una llave?????????
+//OJO, para ver con oli... me parece que hay que meter un IF mas en el primer IF tanto para
+//el caso de la def...
 
-    const damage = this.atk - this.def; //mi pokemon se está atacando a si mismo... necesito poder adjudicarle esta def a un enemigo... 
-                                        //podre hacer una herencia en "Pokemon.js" y de ahi asignar una def y atk acá??
-    if(this.atk > this.def){
-        this.hp = 0;
+attack(targetPokemon){ //targetPokemon es un parametro y es usado al llamar a la funcion
+
+    const atkDamage = this.atk - targetPokemon.atk; //el daño es la dif entre 2 pokemones en ataque 
+    const defDamage = targetPokemon.def - this.atk; //el daño es la dif entre la def mas alta y un ataque inferior del pokemon atacante
+                                 
+    if(this.atk > targetPokemon.def){
+        targetPokemon.hp = 0;
         this.Alive = false; //si el ataque es mayor que la defensa, el pokemon se destruye in inflingir daño
-    } else if(this.atk < this.def){
-        this.hp -= (this.def-this.atk); //si el ataque es menor que la defensa, se resta de los hp la diferencia entre ambos
-        this.Alive = true;
+        console.log(`${this.name} destruyó al rival!`)
+    } else if(this.atk < targetPokemon.def){
+        this.hp -= defDamage; //si el ataque es menor que la defensa, se resta de los hp la diferencia entre ambos
+        this.Alive = true; //corregir
+    } else if(this.atk>targetPokemon.atk){
+        targetPokemon.hp -= atkDamage;
     } else {
-        alert("No hubo efecto sobre el rival!")
+        console.log(`${this.name} no pudo atacar!`)
+    }
+}
+
+    defend(targetPokemon){
+        const atkDamage = this.atk - targetPokemon.atk;  
+        const defDamage = targetPokemon.def - this.atk; 
+                                 
+    if(this.def > targetPokemon.atk){
+        targetPokemon.hp -= defDamage;
+        this.Alive = false; //corregir
+        console.log(`${this.name} se defendió del rival!`)
+    } else if(this.def < targetPokemon.atk){
+        this.hp -= 0;
+        this.Alive = false;
+    } else{
+        console.log(`${this.name} no pudo atacar!`)
     }}
-;
+
+    heal(amountHealed){
+        this.hp += amountHealed;
+        console.log(`${this.name} se curó en ${this.name} puntos!`)
+    
+    }
+
+    
